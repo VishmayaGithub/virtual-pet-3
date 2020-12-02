@@ -1,0 +1,52 @@
+class Food {
+  constructor(){
+  this.foodStock=0;
+  this.image=loadImage('virtual pet images/Food Stock.png');
+  }
+
+ updateFoodStock(foodStock){
+  this.foodStock=foodStock;
+ }
+
+ deductFood(){
+   if(this.foodStock>0){
+    this.foodStock=this.foodStock-1;
+   }
+  }
+
+  getFoodStock(){
+    return this.foodStock;
+  }
+
+  bedroom(){
+    background(bedroom,350,500)
+  }
+  bathroom(){
+    background(bathroom,350,500)
+  }
+  garden(){
+    background(garden,350,500)
+  }
+  died(){
+    d = createSprite(350,500)
+    d.addImage("d",died)
+    
+  }
+  display(){
+    var x=80,y=100;
+    
+    imageMode(CENTER);
+ 
+    
+    if(this.foodStock!=0){
+      for(var i=0;i<this.foodStock;i++){
+        if(i%10==0){
+          x=80;
+          y=y+40;
+        }
+        image(this.image,x,y,50,50);
+        x=x+50;
+      }
+    }
+  }
+}
